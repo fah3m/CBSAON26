@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700;900&family=Oswald:wght@500;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+
+/* ── Base resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; background: #0a0700; color: white; margin: 0; }
+
+/* ── Shimmer (used via style prop animation reference) ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
