@@ -12,7 +12,7 @@ if (typeof document !== "undefined" && !document.getElementById("navbar-fonts"))
 
 const navLinks = [
   { to: "/",             label: "Home",         end: true },
-  { to: "/about",        label: "About" },
+  { to: "/resources",        label: "Resources" },
   { to: "/secretariat",  label: "Secretariat" },
   { to: "/committees",   label: "Committees" },
   { to: "/publications", label: "Publications" },
