@@ -22,6 +22,8 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="secretariat" element={<NotFound />} />
+        <Route path="publications" element={<NotFound />} />
         <Route path="contact" element={<Contact />} />
         <Route path="resources" element={<Resources />} />
         <Route path="committees" element={<Committees />} />
