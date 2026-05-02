@@ -9,6 +9,16 @@ export default defineConfig({
     react(),
     sitemap({
       hostname: "https://cbsaon2026.com",
+      dynamicRoutes: [
+        "/",
+        "/about",
+        "/committees",
+        "/secretariat",
+        "/publications",
+        "/contact",
+        "/resources",
+        "/support",
+      ],
     }),
   ],
 });
