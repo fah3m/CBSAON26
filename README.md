@@ -1,4 +1,4 @@
-# CBSAON25 – AON 2026 Official Website
+# CBSAON26 – AON 2026 Official Website
 
 This repository contains the official website for **AON 2026**, the **6th edition of Calcutta Boys' School's Assembly of Nations**.
 
