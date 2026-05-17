@@ -118,7 +118,7 @@ export default function About({ onPopup }) {
             <div className="flex gap-3 lg:gap-4">
               <StatCard num="6TH" label="Edition" delay={0.2} />
               <StatCard num="2" label="Days" delay={0.26} />
-              <StatCard num="3" label="Committees" delay={0.32} />
+              <StatCard num="5" label="Committees" delay={0.32} />
             </div>
           </Reveal>
         </div>
