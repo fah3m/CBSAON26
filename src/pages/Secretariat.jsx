@@ -915,7 +915,7 @@ const SECRETARIAT_TOP = [
     photo: "pictures/Aksh.jpg",
     grade: "XI H",
     role: "Deputy Secretary General",
-    bio: "We present to you Aksh Baroi, the Deputy Secretary General—the man who has explored almost every committee out there, from UNSC to UNGA to crisis committees like NATO and war cabinets, just to keep things interesting. With multiple 2nd place finishes and a verbal mention at the high stakes BESCAON under his belt, Aksh clearly knows what he’s doing… even if his expressions sometimes suggest otherwise. A future diplomat with a strong interest in international relations, he handles pressure well—until the mood swings kick in and suddenly the committee has two crises to deal with. Known among his friends for being extremely approachable (which is a polite way of saying he gets harassed a lot), Aksh somehow manages to be the centre of every joke while still getting the work done. Despite the constant leg-pulling, unpredictable moods, and chaotic energy around him, one thing is certain: if there’s responsibility to be handled, Aksh will be there… probably getting teased while doing it. ",
+    bio: "We present to you Aksh Baroi, the Deputy Secretary General—the man who has explored almost every committee out there, from UNSC to UNGA to crisis committees like NATO and war cabinets, just to keep things interesting. With multiple 2nd place finishes, verbal mention in BESCAON and recently a spec main at the high stakes JUMUN under his belt, Aksh clearly knows what he’s doing… even if his expressions sometimes suggest otherwise. A future diplomat with a strong interest in international relations, he handles pressure well—until the mood swings kick in and suddenly the committee has two crises to deal with. Known among his friends for being extremely approachable (which is a polite way of saying he gets harassed a lot), Aksh somehow manages to be the centre of every joke while still getting the work done. Despite the constant leg-pulling, unpredictable moods, and chaotic energy around him, one thing is certain: if there’s responsibility to be handled, Aksh will be there… probably getting teased while doing it. ",
   },
 ];
 
@@ -961,7 +961,6 @@ const COMMITTEES = [
       {
         name: "Agnitra Saha",
         photo: "pictures/Agnitra.jpg",
-        grade: "XII C",
         role: "Chairperson",
         bio: "Agnitra Saha is a CBS alumnus of batch 2020, currently a final year Masters student in International Studies from Christ University, Bangalore, actively interested in on-ground state and national politics. Having served as Deputy Secretary General of CBSAON '19, he considers this a homecoming. One of the better-known faces in the circuit, he has been associated with an extensive number of MUNs, debates, and write-up competitions for almost a decade. He holds a special interest in International Relations, with academic focus on social movements, international humanitarian covenants, and Track II Diplomacy — fields he believes make the world a better place.",
       },
@@ -975,7 +974,7 @@ const COMMITTEES = [
       {
         name: "Adish Datta",
         photo: "pictures/Adish.jpg",
-        grade: "XII C",
+        grade: "X A",
         role: "Co-Vice Chairperson",
         bio: "Adish is an active debater and a member of the drama society, so speaking a lot (with confidence) comes quite naturally to him. With 10+ MUNs under his belt, his journey had a proper “main character moment” with a Special Mention at RCFOD representing Germany, after which the awards decided to stay. He has a soft spot for slightly unconventional country allocations like Nauru and Nicaragua, mainly because of his interest in the Global South. Three Special Mentions as Nicaragua and Nauru are his way of proving that point, but he’s also managed to secure a Best Delegate representing France, showing he’s just as comfortable handling Western narratives when needed.",
       },
@@ -997,7 +996,7 @@ const COMMITTEES = [
         bio: "Diptesh Banerjee is a distinguished MUNer, debater, and student leader from the Indian Institute of Technology Gandhinagar, currently serving as the Convener of the Jadavpur University Debating Society. With extensive experience as both a delegate and Executive Board member across premier conferences nationwide, he brings a dynamic blend of diplomacy, analytical thinking, and leadership to the committee.",
       },
       {
-        name: "Soumyadeep Dev",
+        name: "Soumyadeep Dey",
         photo: "pictures/Soumyadeep.jpg",
         grade: "XIII H",
         role: "Vice Chairperson",
@@ -1024,14 +1023,14 @@ const COMMITTEES = [
       {
         name: "Adrish Hossain",
         photo: "pictures/Adrish.jpg",
-        grade: "XIII H",
+        grade: "XII H",
         role: "Vice Chairperson",
         bio: "Adrish Hossain's presence in the MUN circuit stands out, with his interest lying in security committees. As a national-level debater, he agrees that MUNs are valuable spaces to learn and grow, but strives for academic progress above all. He refrains from calling MUNs his life, holding instead that humility, respect, and consistency in the spirit of learning matter most — making it an academic simulation in its true essence. He believes that to be a better delegate, one must first strive to be a better person. Outside of MUNs, Adrish is a Humanities student with a keen interest in economics and international relations, and a devoted Bayern Munich fan — a calm contender despite his years.",
       },
       {
         name: "Aksh Baroi",
         photo: "pictures/Aksh.jpg",
-        grade: "XII H",
+        grade: "XI H",
         role: "Co-Vice Chairperson",
         bio: "The man who has explored almost every committee out there — from UNSC to UNGA to crisis committees like NATO and war cabinets, just to keep things interesting. With a Best Delegate award, multiple 2nd place finishes, and a special mention at the high-stakes JUMUN under his belt, Aksh clearly knows what he's doing… even if his expressions sometimes suggest otherwise. A future diplomat with a strong interest in international relations and a loyal supporter of Real Madrid, he handles pressure well. Despite the constant leg-pulling, unpredictable moods, and chaotic energy around him, one thing is certain: if there's responsibility to be handled, Aksh will be there — probably getting teased while doing it.",
       },
@@ -1081,7 +1080,7 @@ const COMMITTEES = [
       {
         name: "Kinshuk Trivedi",
         photo: "pictures/Kinshuk.jpg",
-        grade: "XIII H",
+        grade: "XII H",
         role: "Vice Chairperson",
         bio: 'Kinshuk Trivedi, his interest lies in research and especially link of every problem to the Global South. He is a burgeoning MUN and Moot Court enthusiast but has been lately working on his "academics" rather than "academic simulations" for what he calls is his "greater purpose". He emphasises on learning from our own mistakes whether it be an academic simulation or your own life and the type of guy who would joke about your insecurities while at the same time would provide the best 3 AM therapy even when he is half asleep. He is a dedicated CSK and Barcelona fan and has that calm and composure even everything in the background is just his life, exploding. And yet again he does it for the laughing emoji.',
       },
