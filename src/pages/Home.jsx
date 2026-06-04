@@ -27,13 +27,58 @@ if (typeof document !== "undefined" && !document.getElementById("aon-global-styl
 
 /* ─── POPUP DATA ─── */
 const popupData = {
-  cbs: {
-    title: "Calcutta Boys' School",
-    text: "Established in 1877, Calcutta Boys' School is one of the oldest and most prestigious educational institutions in India. Located in the heart of Kolkata, it has been shaping young minds for over a century, producing leaders, thinkers, and changemakers across generations.",
-  },
-  aon: {
-    title: "Assembly Of Nations",
-    text: "Assembly Of Nations (AON) is the flagship Model United Nations conference organised by Calcutta Boys' School. It brings together students from schools across the country to engage in diplomatic simulations, debate global issues, and develop critical thinking and public speaking skills. AON 2026 marks a landmark edition in the conference's legacy.",
+  wab: {
+    title: "We Are Back",
+    sections: [
+      {
+        heading: null,
+        text: "After the resounding success of our fifth edition, the gates of diplomacy swing wide once more. The Calcutta Boys' School is thrilled to announce the sixth chapter of its hallmark conference — the Assembly of Nations (CBS AON) 2026. Returning to the circuit on the 29th and 30th of June, 2026, AON continues to serve as the definitive arena for intellectual rigor and statesmanship in Kolkata.",
+      },
+      {
+        heading: null,
+        text: "Following the spirit of our \"Rebirth,\" this edition moves from restoration to evolution. CBS AON has never been a mere simulation; it is a crucible where the city's most formidable young minds are tested. From our inception in 2011 to our landmark sessions through the years, we have maintained a reputation for unparalleled organizational precision and a commitment to the \"pure\" form of Model United Nations — where logic, research, and rhetoric reign supreme.",
+      },
+      {
+        heading: "WHAT YOU ALREADY KNOW",
+        text: null,
+      },
+      {
+        heading: "UNSC (United Nations Security Council):",
+        text: "The apex of global authority. As the only body capable of passing legally binding resolutions, this committee is a high-stakes arena of realpolitik. Delegates must navigate the veto power of the P5 and handle volatile international crises where every second counts and every word carries the weight of law.",
+      },
+      {
+        heading: "UNGA-SPECPOL (United Nations General Assembly — Special Political and Decolonization):",
+        text: "The bridge between history and the future. Handling a diverse mandate from decolonization and atomic radiation to the peaceful uses of outer space, SPECPOL challenges delegates to solve sensitive political issues that fall outside conventional GA scopes. It is the ultimate test of diplomatic versatility and strategic consensus-building.",
+      },
+      {
+        heading: "THE 2026 EXPANSION: NEW HORIZONS OF DIPLOMACY",
+        text: "This year, CBS AON 2026 pushes the boundaries of conventional debate by introducing three powerhouse committees designed to challenge even the most seasoned delegates:",
+      },
+      {
+        heading: "THE G20 (Group of Twenty):",
+        text: "Step into the epicentre of global economic governance. In a world of shifting financial tides, this committee demands delegates who can balance national interest with the precarious weight of global stability.",
+      },
+      {
+        heading: "C34 (Special Committee on Peacekeeping Operations):",
+        text: "A rare and technical challenge for those who understand that peace is not just a concept, but a logistical and political feat. Delegates will grapple with the complexities of UN mandates and the ground realities of conflict zones.",
+      },
+      {
+        heading: "UNHRC (United Nations Human Rights Council):",
+        text: "The conscience of the international community. Expect fierce, high-stakes discourse on the fundamental rights and protections that define our modern moral landscape.",
+      },
+      {
+        heading: "A LEGACY OF EXCELLENCE",
+        text: "Beyond the floor of the committees, CBS AON is a community. It is a tradition defined by its seasoned Executive Board, its innovative agendas, and the unique camaraderie born from two days of intense negotiation. We provide more than just a platform for debate; we offer a transformative experience that turns students into strategists and delegates into leaders.",
+      },
+      {
+        heading: null,
+        text: "As the \"vibrant chaos\" of international affairs continues to unfold across the globe, we invite you to be the voice of reason within it. Whether you are a veteran of the circuit or an aspiring diplomat ready to make your debut, CBS AON 2026 is your stage.",
+      },
+      {
+        heading: "JOIN THE LEGACY. MASTER THE CRAFT. DEFINE THE FUTURE.",
+        text: null,
+      },
+    ],
   },
 };
 
@@ -238,13 +283,66 @@ function Popup({ type, onClose }) {
           onClick={(e) => e.target === e.currentTarget && onClose()}
         >
           <motion.div
-            className="relative max-w-lg w-full rounded-2xl p-8 bg-[rgba(10,8,2,0.97)] border border-[rgba(255,190,0,0.2)] shadow-[0_0_80px_rgba(200,140,0,0.14)]"
-            initial={{ scale: 0.92, y: 24, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.92, y: 16, opacity: 0 }}
+            className="relative max-w-2xl w-full rounded-2xl p-8 bg-[rgba(10,8,2,0.97)] border border-[rgba(255,190,0,0.2)] shadow-[0_0_80px_rgba(200,140,0,0.14)] max-h-[80vh] overflow-y-auto"
+            initial={{ scale: 0.92, y: 24, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.92, y: 16, opacity: 0 }}
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
           >
-            <motion.button onClick={onClose} className="absolute top-4 right-4 text-[rgba(255,210,80,0.4)] text-xl bg-none border-none cursor-pointer" whileHover={{ color: "#ffd700", scale: 1.15 }} whileTap={{ scale: 0.85 }}>✕</motion.button>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif" }} className="text-3xl text-white mb-3">{data.title}</h2>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400 }} className="text-sm leading-relaxed text-[rgba(255,220,140,0.75)]">{data.text}</p>
+            {/* Sticky close button */}
+            <div className="sticky top-0 flex justify-end mb-2 z-10">
+              <motion.button
+                onClick={onClose}
+                className="text-[rgba(255,210,80,0.4)] text-xl bg-transparent border-none cursor-pointer leading-none"
+                whileHover={{ color: "#ffd700", scale: 1.15 }}
+                whileTap={{ scale: 0.85 }}
+              >
+                ✕
+              </motion.button>
+            </div>
+
+            {/* Title */}
+            <h2
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              className="text-4xl text-white mb-6 leading-none"
+            >
+              {data.title}
+            </h2>
+
+            {/* Sections */}
+            <div className="flex flex-col gap-4">
+              {data.sections.map((sec, i) => (
+                <div key={i} className="flex flex-col gap-1">
+                  {sec.heading && (
+                    <p
+                      style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        fontWeight: 600,
+                        letterSpacing: "0.07em",
+                        fontSize: "0.78rem",
+                        textTransform: "uppercase",
+                        color: "#ffd040",
+                      }}
+                    >
+                      {sec.heading}
+                    </p>
+                  )}
+                  {sec.text && (
+                    <p
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 400,
+                        fontSize: "0.82rem",
+                        lineHeight: "1.75",
+                        color: "rgba(255,220,140,0.75)",
+                      }}
+                    >
+                      {sec.text}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -270,8 +368,17 @@ function Loader({ onDone }) {
   return (
     <AnimatePresence onExitComplete={handleExitComplete}>
       {visible && (
-        <motion.div className="fixed inset-0 z-[3000] flex flex-col items-center justify-center bg-[#0a0700]" exit={{ opacity: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }}>
-          <motion.div className="flex flex-col items-center gap-1" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+        <motion.div
+          className="fixed inset-0 z-[3000] flex flex-col items-center justify-center bg-[#0a0700]"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <motion.div
+            className="flex flex-col items-center gap-1"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 500, fontSize: "clamp(0.55rem, 1.2vw, 0.72rem)", letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(255,200,60,0.55)" }}>
               Calcutta Boys&apos; School
             </span>
@@ -283,8 +390,20 @@ function Loader({ onDone }) {
             </div>
             <span style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: "clamp(0.6rem, 1.4vw, 0.85rem)", letterSpacing: "0.28em", color: "rgba(255,200,60,0.4)", marginTop: "0.25rem" }}>2026</span>
           </motion.div>
-          <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full overflow-hidden" style={{ width: "clamp(100px, 16vw, 160px)", height: "1px", background: "rgba(255,200,0,0.1)" }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.3 }}>
-            <motion.div className="h-full rounded-full" style={{ background: "rgba(255,200,60,0.6)" }} initial={{ width: "0%" }} animate={{ width: "100%" }} transition={{ duration: 1.35, ease: [0.4, 0, 0.2, 1], delay: 0.1 }} />
+          <motion.div
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full overflow-hidden"
+            style={{ width: "clamp(100px, 16vw, 160px)", height: "1px", background: "rgba(255,200,0,0.1)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+          >
+            <motion.div
+              className="h-full rounded-full"
+              style={{ background: "rgba(255,200,60,0.6)" }}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1.35, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+            />
           </motion.div>
         </motion.div>
       )}
@@ -382,7 +501,7 @@ export default function Home() {
             Calcutta Boys&apos; School Presents
           </motion.p>
 
-          {/* main title — bigger */}
+          {/* main title */}
           <motion.h1
             variants={itemVariants}
             className="leading-[0.88] mt-2"
@@ -414,7 +533,7 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* countdown — bigger */}
+          {/* countdown */}
           <motion.div
             variants={itemVariants}
             className="flex items-center gap-4 mt-6 px-6 py-4 rounded-2xl mx-auto lg:mx-0"
@@ -428,6 +547,41 @@ export default function Home() {
                 <CountNum value={val} label={label} />
               </div>
             ))}
+          </motion.div>
+
+          {/* WE ARE BACK button */}
+          <motion.div variants={itemVariants} className="mt-6 mx-auto lg:mx-0">
+            <motion.button
+              onClick={() => setPopup("wab")}
+              className="relative px-8 py-3 rounded-xl text-sm tracking-[0.18em] uppercase overflow-hidden cursor-pointer border-none outline-none"
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 600,
+                background: "linear-gradient(135deg, rgba(30,20,0,0.9) 0%, rgba(15,10,0,0.95) 100%)",
+                border: "1px solid rgba(255,190,0,0.3)",
+                color: "#ffd040",
+                boxShadow: "0 0 24px rgba(200,140,0,0.12), inset 0 1px 0 rgba(255,210,80,0.08)",
+              }}
+              whileHover={{
+                scale: 1.04,
+                boxShadow: "0 0 40px rgba(200,140,0,0.28), inset 0 1px 0 rgba(255,210,80,0.12)",
+                borderColor: "rgba(255,200,0,0.55)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 340, damping: 22 }}
+            >
+              {/* shimmer sweep */}
+              <motion.span
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "linear-gradient(105deg, transparent 30%, rgba(255,210,80,0.09) 50%, transparent 70%)",
+                  backgroundSize: "200% 100%",
+                }}
+                animate={{ backgroundPosition: ["-200% center", "200% center"] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: "linear", repeatDelay: 1.2 }}
+              />
+              <span className="relative z-10">✦ &nbsp;We Are Back</span>
+            </motion.button>
           </motion.div>
         </motion.div>
       </section>
