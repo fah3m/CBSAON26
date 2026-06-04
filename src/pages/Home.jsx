@@ -27,6 +27,8 @@ if (typeof document !== "undefined" && !document.getElementById("aon-global-styl
 
 /* ─── POPUP DATA ─── */
 const popupData = {
+
+  
   wab: {
     title: "We Are Back",
     sections: [
@@ -79,6 +81,15 @@ const popupData = {
         text: null,
       },
     ],
+  },
+
+    cbs: {
+    title: "Calcutta Boys' School",
+    text: "Established in 1877, Calcutta Boys' School is one of the oldest and most prestigious educational institutions in India. Located in the heart of Kolkata, it has been shaping young minds for over a century, producing leaders, thinkers, and changemakers across generations.",
+  },
+  aon: {
+    title: "Assembly Of Nations",
+    text: "Assembly Of Nations (AON) is the flagship Model United Nations conference organised by Calcutta Boys' School. It brings together students from schools across the country to engage in diplomatic simulations, debate global issues, and develop critical thinking and public speaking skills. AON 2026 marks a landmark edition in the conference's legacy.",
   },
 };
 
@@ -289,16 +300,14 @@ function Popup({ type, onClose }) {
             exit={{ scale: 0.92, y: 16, opacity: 0 }}
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
           >
-            {/* Sticky close button */}
+            {/* Sticky close */}
             <div className="sticky top-0 flex justify-end mb-2 z-10">
               <motion.button
                 onClick={onClose}
                 className="text-[rgba(255,210,80,0.4)] text-xl bg-transparent border-none cursor-pointer leading-none"
                 whileHover={{ color: "#ffd700", scale: 1.15 }}
                 whileTap={{ scale: 0.85 }}
-              >
-                ✕
-              </motion.button>
+              >✕</motion.button>
             </div>
 
             {/* Title */}
@@ -309,40 +318,29 @@ function Popup({ type, onClose }) {
               {data.title}
             </h2>
 
-            {/* Sections */}
-            <div className="flex flex-col gap-4">
-              {data.sections.map((sec, i) => (
-                <div key={i} className="flex flex-col gap-1">
-                  {sec.heading && (
-                    <p
-                      style={{
-                        fontFamily: "'Oswald', sans-serif",
-                        fontWeight: 600,
-                        letterSpacing: "0.07em",
-                        fontSize: "0.78rem",
-                        textTransform: "uppercase",
-                        color: "#ffd040",
-                      }}
-                    >
-                      {sec.heading}
-                    </p>
-                  )}
-                  {sec.text && (
-                    <p
-                      style={{
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontWeight: 400,
-                        fontSize: "0.82rem",
-                        lineHeight: "1.75",
-                        color: "rgba(255,220,140,0.75)",
-                      }}
-                    >
-                      {sec.text}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
+            {/* Sections array (wab) OR plain text (cbs / aon) */}
+            {data.sections ? (
+              <div className="flex flex-col gap-4">
+                {data.sections.map((sec, i) => (
+                  <div key={i} className="flex flex-col gap-1">
+                    {sec.heading && (
+                      <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: "0.07em", fontSize: "0.78rem", textTransform: "uppercase", color: "#ffd040" }}>
+                        {sec.heading}
+                      </p>
+                    )}
+                    {sec.text && (
+                      <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: "0.82rem", lineHeight: "1.75", color: "rgba(255,220,140,0.75)" }}>
+                        {sec.text}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: "0.82rem", lineHeight: "1.75", color: "rgba(255,220,140,0.75)" }}>
+                {data.text}
+              </p>
+            )}
           </motion.div>
         </motion.div>
       )}
