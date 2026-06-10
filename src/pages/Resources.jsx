@@ -17,35 +17,100 @@ function Reveal({ children, delay = 0, y = 40 }) {
 }
 
 const PDF_ICON = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 2H18L24 8V26H6V2Z" stroke="rgba(255,190,0,0.5)" strokeWidth="1.2" fill="none" />
-    <path d="M17 2V9H24" stroke="rgba(255,190,0,0.5)" strokeWidth="1.2" fill="none" />
-    <rect x="3" y="14" width="14" height="8" rx="1" fill="rgba(255,190,0,0.12)" stroke="rgba(255,200,0,0.6)" strokeWidth="1" />
-    <text x="10" y="20.5" textAnchor="middle" fontSize="5" fontFamily="'Oswald', sans-serif" fontWeight="700" fill="#ffd700" letterSpacing="0.3">PDF</text>
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6 2H18L24 8V26H6V2Z"
+      stroke="rgba(255,190,0,0.5)"
+      strokeWidth="1.2"
+      fill="none"
+    />
+    <path
+      d="M17 2V9H24"
+      stroke="rgba(255,190,0,0.5)"
+      strokeWidth="1.2"
+      fill="none"
+    />
+    <rect
+      x="3"
+      y="14"
+      width="14"
+      height="8"
+      rx="1"
+      fill="rgba(255,190,0,0.12)"
+      stroke="rgba(255,200,0,0.6)"
+      strokeWidth="1"
+    />
+    <text
+      x="10"
+      y="20.5"
+      textAnchor="middle"
+      fontSize="5"
+      fontFamily="'Oswald', sans-serif"
+      fontWeight="700"
+      fill="#ffd700"
+      letterSpacing="0.3"
+    >
+      PDF
+    </text>
   </svg>
 );
 
 const ARROW_ICON = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 9H15M15 9L10 4M15 9L10 14"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 const DOWNLOAD_ICON = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M2 12H14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8 2V10M8 10L5 7M8 10L11 7"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2 12H14"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
 const resources = [
   {
-    id: "handbook",
+    id: "Handbook",
     tag: "Delegate Guide",
     title: "Delegate\nHandbook",
     desc: "Everything you need to know before stepping into the chamber. Rules, protocols, and preparation essentials.",
     pages: "24 Pages",
-    pdf: "/resources/delegate-handbook.pdf",
+    pdf: "files\CBS AON 2026 Handbook.pdf",
     accent: "#ffd700",
     index: "01",
   },
@@ -97,7 +162,8 @@ function ResourceCard({ resource, delay }) {
       whileHover="hover"
       className="group relative flex flex-col justify-between overflow-hidden rounded-2xl cursor-pointer no-underline"
       style={{
-        background: "linear-gradient(145deg, rgba(255,200,0,0.04) 0%, rgba(10,7,0,0.8) 100%)",
+        background:
+          "linear-gradient(145deg, rgba(255,200,0,0.04) 0%, rgba(10,7,0,0.8) 100%)",
         border: "1px solid rgba(255,190,0,0.14)",
         padding: "clamp(1.5rem, 3vw, 2.2rem)",
         minHeight: "clamp(280px, 32vw, 360px)",
@@ -117,8 +183,30 @@ function ResourceCard({ resource, delay }) {
       />
 
       {/* Corner brackets */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: 28, height: 28, borderTop: "1.5px solid rgba(255,200,0,0.35)", borderLeft: "1.5px solid rgba(255,200,0,0.35)", borderRadius: "10px 0 0 0" }} />
-      <div style={{ position: "absolute", bottom: 0, right: 0, width: 28, height: 28, borderBottom: "1.5px solid rgba(255,200,0,0.35)", borderRight: "1.5px solid rgba(255,200,0,0.35)", borderRadius: "0 0 10px 0" }} />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: 28,
+          height: 28,
+          borderTop: "1.5px solid rgba(255,200,0,0.35)",
+          borderLeft: "1.5px solid rgba(255,200,0,0.35)",
+          borderRadius: "10px 0 0 0",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          width: 28,
+          height: 28,
+          borderBottom: "1.5px solid rgba(255,200,0,0.35)",
+          borderRight: "1.5px solid rgba(255,200,0,0.35)",
+          borderRadius: "0 0 10px 0",
+        }}
+      />
 
       {/* Top row */}
       <div className="relative z-10 flex items-start justify-between mb-6">
@@ -185,7 +273,15 @@ function ResourceCard({ resource, delay }) {
       </div>
 
       {/* Divider */}
-      <div style={{ width: "100%", height: 1, background: "linear-gradient(to right, rgba(255,190,0,0.2), transparent)", marginBottom: "1rem" }} />
+      <div
+        style={{
+          width: "100%",
+          height: 1,
+          background:
+            "linear-gradient(to right, rgba(255,190,0,0.2), transparent)",
+          marginBottom: "1rem",
+        }}
+      />
 
       {/* Desc */}
       <p
@@ -226,7 +322,10 @@ function ResourceCard({ resource, delay }) {
         <motion.div
           className="flex items-center justify-center rounded-full"
           variants={{
-            hover: { background: "rgba(255,200,0,0.18)", borderColor: "rgba(255,190,0,0.6)" },
+            hover: {
+              background: "rgba(255,200,0,0.18)",
+              borderColor: "rgba(255,190,0,0.6)",
+            },
           }}
           style={{
             width: 34,
@@ -280,7 +379,8 @@ export default function Resources() {
           transform: "translateX(-50%)",
           width: "80vw",
           height: "40vh",
-          background: "radial-gradient(ellipse at center, rgba(255,180,0,0.04) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse at center, rgba(255,180,0,0.04) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -288,7 +388,14 @@ export default function Resources() {
       {/* Top rule */}
       <Reveal delay={0}>
         <div className="flex items-center gap-4 px-6 lg:px-[8vw] mb-12">
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(255,190,0,0.25))" }} />
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background:
+                "linear-gradient(to right, transparent, rgba(255,190,0,0.25))",
+            }}
+          />
           <span
             style={{
               fontFamily: "'Oswald', sans-serif",
@@ -301,12 +408,18 @@ export default function Resources() {
           >
             Assembly Of Nations · 2026
           </span>
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(255,190,0,0.25))" }} />
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background:
+                "linear-gradient(to left, transparent, rgba(255,190,0,0.25))",
+            }}
+          />
         </div>
       </Reveal>
 
       <div className="relative z-10 w-full px-6 lg:px-[8vw]">
-
         {/* Headline */}
         <Reveal delay={0.05}>
           <div className="mb-4">
@@ -323,7 +436,8 @@ export default function Resources() {
               <span
                 style={{
                   display: "block",
-                  background: "linear-gradient(90deg, #ffd700, #f5a623, #c8790a, #f5a623, #ffd700)",
+                  background:
+                    "linear-gradient(90deg, #ffd700, #f5a623, #c8790a, #f5a623, #ffd700)",
                   backgroundSize: "300% auto",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -353,16 +467,29 @@ export default function Resources() {
                 margin: 0,
               }}
             >
-              Everything your delegation needs — handbooks, procedures, and guides — all in one place.
+              Everything your delegation needs — handbooks, procedures, and
+              guides — all in one place.
             </p>
-            <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, rgba(255,190,0,0.15), transparent)", display: "none" }} className="lg:block" />
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background:
+                  "linear-gradient(to right, rgba(255,190,0,0.15), transparent)",
+                display: "none",
+              }}
+              className="lg:block"
+            />
           </div>
         </Reveal>
 
         {/* Cards grid */}
         <div
           className="grid gap-4"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))" }}
+          style={{
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+          }}
         >
           {resources.map((r, i) => (
             <ResourceCard key={r.id} resource={r} delay={0.14 + i * 0.08} />
@@ -372,7 +499,15 @@ export default function Resources() {
         {/* Bottom note */}
         <Reveal delay={0.5}>
           <div className="flex items-center gap-3 mt-10">
-            <div style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,190,0,0.3)", flexShrink: 0 }} />
+            <div
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "rgba(255,190,0,0.3)",
+                flexShrink: 0,
+              }}
+            />
             <p
               style={{
                 fontFamily: "'Oswald', sans-serif",
@@ -384,22 +519,42 @@ export default function Resources() {
                 margin: 0,
               }}
             >
-              All documents are official AON 2026 publications · Last updated April 2026
+              All documents are official AON 2026 publications · Last updated
+              April 2026
             </p>
           </div>
         </Reveal>
-
       </div>
 
       {/* Bottom rule */}
       <Reveal delay={0.1}>
         <div className="flex items-center gap-4 px-6 lg:px-[8vw] mt-16">
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(255,190,0,0.15))" }} />
-          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "rgba(255,190,0,0.3)" }} />
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(255,190,0,0.15))" }} />
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background:
+                "linear-gradient(to right, transparent, rgba(255,190,0,0.15))",
+            }}
+          />
+          <div
+            style={{
+              width: 4,
+              height: 4,
+              borderRadius: "50%",
+              background: "rgba(255,190,0,0.3)",
+            }}
+          />
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background:
+                "linear-gradient(to left, transparent, rgba(255,190,0,0.15))",
+            }}
+          />
         </div>
       </Reveal>
-
     </section>
   );
 }
