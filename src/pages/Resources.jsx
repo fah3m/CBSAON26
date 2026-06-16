@@ -180,7 +180,7 @@ const resources = [
   title: "Brochure",
   desc: "The Conference Brochure",
   pages: "Brochure",
-  pdf: "files/brochure.pdf",
+  pdf: "files/brochuree.pdf",
   accent: "#d4af37",
   index: "08",
 },
