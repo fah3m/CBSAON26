@@ -184,6 +184,16 @@ const resources = [
   accent: "#d4af37",
   index: "08",
 },
+  {
+  id: "Itinerary",
+  tag: "Itinerary",
+  title: "Itinerary",
+  desc: "The Itinerary",
+  pages: "6",
+  pdf: "files/AON’2026 Itinerary.pdf",
+  accent: "#d4af37",
+  index: "09",
+},
 ];
 
 function ResourceCard({ resource, delay }) {
