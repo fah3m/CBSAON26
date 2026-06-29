@@ -1,6 +1,127 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Newspaper, Lock, ArrowUpRight, CalendarClock } from "lucide-react";
+
+const NEWSPAPER_ICON = ({ size = 20, color = "rgba(255,190,0,0.55)" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 4H16V18H4V4Z"
+      stroke={color}
+      strokeWidth="1.4"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16 8H20V20H6"
+      stroke={color}
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.5 7.5H13.5"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M6.5 10.5H13.5"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M6.5 13.5H10.5"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const LOCK_ICON = ({ size = 20, color = "rgba(255,230,200,0.85)" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="5"
+      y="11"
+      width="14"
+      height="9"
+      rx="1.5"
+      stroke={color}
+      strokeWidth="1.8"
+    />
+    <path
+      d="M8 11V7.5C8 5.01 9.79 3 12 3C14.21 3 16 5.01 16 7.5V11"
+      stroke={color}
+      strokeWidth="1.8"
+      strokeLinecap="round"
+    />
+    <circle cx="12" cy="15.2" r="1.3" fill={color} />
+  </svg>
+);
+
+const ARROW_UP_RIGHT_ICON = ({ size = 16, color = "#ffd700" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 14L14 4M14 4H6M14 4V12"
+      stroke={color}
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const CALENDAR_CLOCK_ICON = ({ size = 15, color = "rgba(255,190,0,0.4)" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="3"
+      y="5"
+      width="18"
+      height="16"
+      rx="2"
+      stroke={color}
+      strokeWidth="1.5"
+    />
+    <path d="M3 9H21" stroke={color} strokeWidth="1.5" />
+    <path
+      d="M8 3V6.5M16 3V6.5"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <circle cx="15.5" cy="15.5" r="3.6" stroke={color} strokeWidth="1.4" />
+    <path
+      d="M15.5 13.6V15.5L16.8 16.6"
+      stroke={color}
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 function Reveal({ children, delay = 0, y = 40 }) {
   const ref = useRef(null);
@@ -32,14 +153,16 @@ const publications = [
     excerpt:
       "Delegates take their seats as the first session begins. A look inside today's opening ceremonies, committee assignments, and the issues already dividing the floor.",
     meta: "6 Min Read",
-    href: "files/AON DAY ONE-INAUGRATION.pdf",
+    href: "files/AON-Dispatch-Day-1.pdf",
   },
   {
-    status: "to be published",
+    status: "embargoed",
     day: "Day II",
     date: "June 30, 2026",
     title: "Tomorrow's\nDispatch",
-    excerpt: "nil",
+    excerpt:
+      "Sealed until tomorrow's session opens. Check back once the gavel drops to read the second dispatch.",
+    meta: "Releases 9:00 AM",
   },
 ];
 
@@ -132,11 +255,7 @@ function FeaturedCard({ pub, delay }) {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <Newspaper
-              size={20}
-              color="rgba(255,190,0,0.55)"
-              strokeWidth={1.4}
-            />
+            <NEWSPAPER_ICON size={20} color="rgba(255,190,0,0.55)" />
             <span
               style={{
                 fontFamily: "'Oswald', sans-serif",
@@ -228,7 +347,7 @@ function FeaturedCard({ pub, delay }) {
           }}
         >
           <span>Read The Dispatch</span>
-          <ArrowUpRight size={16} strokeWidth={2} />
+          <ARROW_UP_RIGHT_ICON size={16} color="#ffd700" />
         </motion.div>
       </div>
     </motion.a>
@@ -309,7 +428,7 @@ function EmbargoedCard({ pub, delay }) {
               "0 0 0 2px rgba(255,190,0,0.18), inset 0 2px 4px rgba(255,255,255,0.15), inset 0 -3px 6px rgba(0,0,0,0.4)",
           }}
         >
-          <Lock size={20} color="rgba(255,230,200,0.85)" strokeWidth={2} />
+          <LOCK_ICON size={20} color="rgba(255,230,200,0.85)" />
         </div>
         <div>
           <h3
@@ -344,11 +463,7 @@ function EmbargoedCard({ pub, delay }) {
       </p>
 
       <div className="relative z-10 flex items-center gap-2">
-        <CalendarClock
-          size={15}
-          color="rgba(255,190,0,0.4)"
-          strokeWidth={1.6}
-        />
+        <CALENDAR_CLOCK_ICON size={15} color="rgba(255,190,0,0.4)" />
         <span
           style={{
             fontFamily: "'Oswald', sans-serif",
