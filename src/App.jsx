@@ -16,6 +16,7 @@ import Committees from "./pages/Committees.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Support from "./pages/Support.jsx";
 import SecretariatPage from "./pages/Secretariat.jsx";
+import Publications from "./pages/Publications.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,7 +25,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="secretariat" element={<SecretariatPage />} />
-        <Route path="publications" element={<NotFound />} />
+        <Route path="publications" element={<Publications />} />
         <Route path="contact" element={<Contact />} />
         <Route path="resources" element={<Resources />} />
         <Route path="committees" element={<Committees />} />
