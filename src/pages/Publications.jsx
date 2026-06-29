@@ -153,7 +153,7 @@ const publications = [
     excerpt:
       "Delegates take their seats as the first session begins. A look inside today's opening ceremonies, committee assignments, and the issues already dividing the floor.",
     meta: "6 Min Read",
-    href: "files/AON-Dispatch-Day-1.pdf",
+    href: "files/AON DAY ONE-INAUGRATION.pdf",
   },
   {
     status: "embargoed",
