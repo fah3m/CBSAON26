@@ -96,60 +96,6 @@ const popupData = {
 const LOADER_KEY = "aon26_loader_shown";
 
 /* ═══════════════════════════════════
-   COUNTDOWN HOOK
-═══════════════════════════════════ */
-function useCountdown(targetDate) {
-  const [time, setTime] = useState({ days: "00", hours: "00", mins: "00", secs: "00" });
-  useEffect(() => {
-    const pad = (n) => String(n).padStart(2, "0");
-    const update = () => {
-      const diff = new Date(targetDate) - new Date();
-      if (diff <= 0) return;
-      setTime({
-        days: pad(Math.floor(diff / 86400000)),
-        hours: pad(Math.floor((diff % 86400000) / 3600000)),
-        mins: pad(Math.floor((diff % 3600000) / 60000)),
-        secs: pad(Math.floor((diff % 60000) / 1000)),
-      });
-    };
-    update();
-    const id = setInterval(update, 1000);
-    return () => clearInterval(id);
-  }, [targetDate]);
-  return time;
-}
-
-/* ═══════════════════════════════════
-   COUNTDOWN NUMBER
-═══════════════════════════════════ */
-function CountNum({ value, label }) {
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <motion.span
-        key={value}
-        initial={{ y: -14, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 380, damping: 24 }}
-        className="tabular-nums leading-none"
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "clamp(2rem, 6vw, 3.8rem)",
-          color: "#fff",
-        }}
-      >
-        {value}
-      </motion.span>
-      <span
-        className="tracking-[0.2em] uppercase"
-        style={{ fontFamily: "'Oswald', sans-serif", color: "rgba(255,210,80,0.55)", fontWeight: 500, fontSize: "0.5rem" }}
-      >
-        {label}
-      </span>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════
    PARTICLES
 ═══════════════════════════════════ */
 const particleData = Array.from({ length: 22 }, (_, i) => ({
@@ -413,7 +359,6 @@ function Loader({ onDone }) {
    HOME PAGE
 ═══════════════════════════════════ */
 export default function Home() {
-  const { days, hours, mins, secs } = useCountdown("2026-06-29T00:00:00");
   const [popup, setPopup] = useState(null);
 
   const alreadySeen = sessionStorage.getItem(LOADER_KEY) === "1";
@@ -531,20 +476,29 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* countdown */}
+          {/* SEE YOU NEXT TIME */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-4 mt-6 px-6 py-4 rounded-2xl mx-auto lg:mx-0"
+            className="mt-6 px-6 py-4 rounded-2xl mx-auto lg:mx-0"
             style={{ background: "rgba(20,14,0,0.6)", border: "1px solid rgba(255,190,0,0.15)", backdropFilter: "blur(8px)" }}
           >
-            {[{ val: days, label: "Days" }, { val: hours, label: "Hrs" }, { val: mins, label: "Min" }, { val: secs, label: "Sec" }].map(({ val, label }, i) => (
-              <div key={label} className="flex items-center gap-4">
-                {i > 0 && (
-                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.6rem, 5vw, 2.2rem)", color: "rgba(255,190,0,0.18)", lineHeight: 1 }}>:</span>
-                )}
-                <CountNum value={val} label={label} />
-              </div>
-            ))}
+            <span
+              style={{
+                fontFamily: "'Cinzel', serif",
+                fontWeight: 700,
+                fontSize: "clamp(1rem, 2.6vw, 1.4rem)",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                background: "linear-gradient(90deg, #ffd700, #f5a623, #c8790a, #f5a623, #ffd700)",
+                backgroundSize: "300% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                animation: "titleShimmer 4s linear infinite",
+              }}
+            >
+              See You Next Time
+            </span>
           </motion.div>
 
           {/* WE ARE BACK button */}
